@@ -91,6 +91,13 @@ app.get('/isAdmin', (req, res) => {
       })
 })
 
+app.get('/myAppointment', (req, res) => {
+  appointmentCollection.find({ email: req.query.email })
+      .toArray((err, documents) => {
+          res.send(documents);
+      })
+})
+
 //   client.close();
 });
 
