@@ -88,6 +88,7 @@ app.get('/isAdmin', (req, res) => {
   doctorsCollection.find({ email: req.query.email })
       .toArray((err, documents) => {
           res.send(documents.length > 0);
+          console.log(documents.length > 0)
       })
 })
 
